@@ -1,3 +1,5 @@
+This repository contains SQL statements used for fixing, analyzing or detecting data quality issues.
+
 1.	Incorrect_dates.sql
 
 This SELECT query retrieves mice that have incorrect necropsies, collection and sacrifice dates occurring after datetimes.
