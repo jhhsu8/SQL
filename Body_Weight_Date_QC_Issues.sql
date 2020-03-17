@@ -1,6 +1,7 @@
 --Body Weight Date QC Issues
 
---The SQL statement below retrieves mice with incorrect ages and datetimes in the body weight procedure. Most incorrect ages and datetimes occur in the gross pathology procedure. See the queried data in Body_Weight_Timepoint_QC_Issues.xlsx (attached).
+/* The SQL statement below retrieves mice with incorrect ages and datetimes in the body weight procedure. 
+Most incorrect ages and datetimes occur in the gross pathology procedure.*/
 
 SELECT DISTINCT wts.mouse_name,
                 project_types.name,
@@ -23,7 +24,8 @@ WHERE project_types.name IN ('KOMP2', 'K2P2EA')
 GROUP BY wts.mouse_name, pp.scheduled, wts.datetime
 ORDER BY wts.mouse_name, wts.datetime;
 
---The SQL statement below retrieves data showing that mice with incorrect ages and datetimes have duplicated body weights and duplicated scheduled dates in the gross pathology procedure. See the queried data in Duplicated_Body_Weights_Scheduled_Dates_Gross_Pathology.xlsx (attached).
+/* The SQL statement below retrieves data showing that mice with incorrect ages and datetimes 
+have duplicated body weights and duplicated scheduled dates in the gross pathology procedure.*/
 
 SELECT wts1.mouse_name,
        project_types.name,
