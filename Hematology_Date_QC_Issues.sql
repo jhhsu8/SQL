@@ -40,3 +40,13 @@ JOIN mbp.labtracks_animal_mirror ltam ON hemas.mouse_name = CONCAT(stock, '-', p
 SET hemas.datetime = hemas.collection_datetime,
 WHERE hemas.collection_datetime != hemas.datetime
 AND DATE(hemas.collection_datetime) = DATE(ltam.death_date);
+
+-- Summary of cases where mosaic death_date !=  hemas.datetime
+SELECT count(*) count, DATEDIFF(datetime, ltam.death_date) date_diff, ltam.death_date, datetime, 
+collection_datetime, sacrifice_datetime 
+FROM hemas 
+JOIN mbp.labtracks_animal_mirror ltam ON hemas.mouse_name = CONCAT(stock, '-', pedigree_number) 
+WHERE DATE(hemas.datetime) != DATE(ltam.death_
+date) AND DATE(hemas.sacrifice_datetime) != DATE(ltam.death_date) AND DATE(hemas.collection_datetime) != DATE(ltam.death_date) 
+GROUP BY date_diff ORDER BY count DESC;
+
