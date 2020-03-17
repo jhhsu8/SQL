@@ -14,7 +14,6 @@ AND mouse_name = 'ET9306-88';
 --2. Mice have incorrect blood collection dates but have correct sacrifice and Mosaic death dates.
 
 --Change those incorrect blood collection dates to the correct sacrifice dates (same as Mosaic death dates).
-
 UPDATE cbcs
     INNER JOIN mbp.labtracks_animal_mirror ltam ON cbcs.mouse_name = CONCAT(ltam.stock, '-', ltam.pedigree_number)
 SET cbcs.collection_datetime = cbcs.sacrifice_datetime,
@@ -24,8 +23,7 @@ WHERE DATE(cbcs.sacrifice_datetime) = ltam.death_date
 
 --3. Mice have incorrect blood collection and sacrifice dates that are after datetimes.
 
---Change those incorrect blood collection/sacrifice dates or datetimes to correct necropsies dates (I have checked that those necropsies dates are the same as --Mosaic death dates).
- 
+--Change those incorrect blood collection/sacrifice dates or datetimes to correct necropsies dates.
 UPDATE cbcs INNER JOIN necropsies ON necropsies.mouse_name = cbcs.mouse_name
 SET cbcs.collection_datetime = necropsies.datetime,
     cbcs.sacrifice_datetime = necropsies.datetime,
@@ -69,8 +67,9 @@ WHERE (DATEDIFF(cbcs.collection_datetime, ltam.birth_date) < 98 OR
   AND (DATEDIFF(cbcs.collection_datetime, ltam.birth_date) < 399 OR
        DATEDIFF(cbcs.collection_datetime, ltam.birth_date) > 427);
 
--- BL1601-425, BL1601-426, BL1601-432, BL1601-427 (with incorrect cbcs dates) are not found in both Mosaic and necropsies tables.
+-- BL1601-425, BL1601-426, BL1601-432, BL1601-427 are not found in both Mosaic and necropsies tables.
 SELECT * from cbcs WHERE DATE(cbcs.collection_datetime) > DATE(cbcs.datetime);
+
 SELECT *
 FROM cbcs
          INNER JOIN mbp.labtracks_animal_mirror ltam ON cbcs.mouse_name = CONCAT(ltam.stock, '-', ltam.pedigree_number)
