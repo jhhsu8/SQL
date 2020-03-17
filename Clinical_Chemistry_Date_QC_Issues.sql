@@ -2,8 +2,8 @@
  
 --Dates of Experiment: 4/16/2013 – 5/29/2018
 
---1. The DCC says the mouse name ET9306-88 has the sacrifice date that occurs after the datetime (date of experiment):
---However, I have found that the sacrifice date for ET9306-88 the same as the datetime.
+/* 1. The DCC says the mouse name ET9306-88 has the sacrifice date that occurs after the datetime (date of experiment):
+However, I have found that the sacrifice date for ET9306-88 the same as the datetime.*/
 
 --Reupload the CBC data for ET9306-88 to the DCC.
 UPDATE DCC_uploads
@@ -44,7 +44,7 @@ SET cbcs.sacrifice_datetime = necropsies.datetime,
     cbcs.modified = '2020-02-04 9:05:00'
 WHERE cbcs.mouse_name = 'CR1381-169';
  Reuploaded fixed CBC data to the DCC.
-
+ 
 --4. Mice have incorrect ages at dates of blood collection/sacrifice dates or Mosaic death dates.
 
 --Figure out how to fix those dates where mice have incorrect ages (See the result from the query below). Status code?
