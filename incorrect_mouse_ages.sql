@@ -1,4 +1,4 @@
-# Retrieve mouse records with incorrect mouse ages at the time of blood collection (collection_age)
+-- Retrieve mouse records with incorrect mouse ages at the time of blood collection (collection_age)
 SELECT DISTINCT mice.mouse_id,
                 project_types.name,
                 necropsies.comment,
