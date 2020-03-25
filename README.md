@@ -8,22 +8,22 @@ This file contains statements for retrieving mice with incorrect ages and dateti
 
 This file contains statements for fixing incorrect blood collection dates.
 
-Hematology_Date_QC_Issues.sql:
+3. Hematology_Date_QC_Issues.sql:
 
 This file contains statements for fixing blood collection/sacrifice dates.
 
-3. Insulin_Date_QC_Issues.sql:
+4. Insulin_Date_QC_Issues.sql:
 
 This file contains statements for fixing blood collection dates.
 
-4. Open_Field_QC_Issues.sql:
+5. Open_Field_QC_Issues.sql:
 
 This file contains statements for fixing the open field data where whole arena average speeds and total distances travelled are zero but the center/periphery speeds and distances travelled are not zero.
 
-5. incorrect_mouse_ages.sql:
+6. incorrect_mouse_ages.sql:
 
 This file contains statements for retrieving mice mouse records with incorrect mouse ages at the time of blood collection (collection_age)
 
-6. incorrect_tissue_expression.sql:
+7. incorrect_tissue_expression.sql:
 
 This file contains statements for changing organs (e.g. brain) of mice from "tissue not available" to "expression" or "no expression"
