@@ -6,15 +6,15 @@ This file contains statements for retrieving mice with incorrect ages and dateti
 
 2. Clinical_Chemistry_Date_QC_Issues.sql:
 
-This file contains statements for fixing incorrect blood collection dates.
+This file contains statements for fixing incorrect blood collection and experiment dates.
 
 3. Hematology_Date_QC_Issues.sql:
 
-This file contains statements for fixing blood collection/sacrifice dates.
+This file contains statements for fixing blood collection, sacrifice, and experiment dates.
 
 4. Insulin_Date_QC_Issues.sql:
 
-This file contains statements for fixing blood collection dates.
+This file contains statements for fixing blood collection and experiment dates.
 
 5. Open_Field_QC_Issues.sql:
 
