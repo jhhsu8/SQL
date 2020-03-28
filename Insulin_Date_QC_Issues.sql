@@ -16,7 +16,7 @@ SET insulins.datetime = insulins.blood_collection_datetime, insulins.modified = 
 WHERE insulins.blood_collection_datetime > insulins.datetime
   AND DATE(insulins.blood_collection_datetime) = DATE(necropsies.datetime)
 
-/* Fix the mismatched Mosaic death dates, necropsies dates, insulin datetimes, 
+/* There are mismatched Mosaic death dates, necropsies dates, insulin datetimes, 
 insulin blood collection dates which are after insulin datetimes */
 SELECT insulins.mouse_name,
        ltam.death_date,
