@@ -67,13 +67,13 @@ WHERE (DATEDIFF(cbcs.collection_datetime, ltam.birth_date) < 98 OR
   AND (DATEDIFF(cbcs.collection_datetime, ltam.birth_date) < 399 OR
        DATEDIFF(cbcs.collection_datetime, ltam.birth_date) > 427);
 
--- BL1601-425, BL1601-426, BL1601-432, BL1601-427 are not found in the Mosaic table.
+-- 5. BL1601-425, BL1601-426, BL1601-432, BL1601-427 are not found in the Mosaic table.
 SELECT *
 FROM cbcs
          INNER JOIN mbp.labtracks_animal_mirror ltam ON cbcs.mouse_name = CONCAT(ltam.stock, '-', ltam.pedigree_number)
 WHERE mouse_name IN ('BL1601-425', 'BL1601-426', 'BL1601-432', 'BL1601-427');
 
--- BL1601-425, BL1601-426, BL1601-432, BL1601-427 are not found in the necropsies tables.
+-- 6. BL1601-425, BL1601-426, BL1601-432, BL1601-427 are not found in the necropsies tables.
 SELECT *
 FROM cbcs
          INNER JOIN necropsies ON necropsies.mouse_name = cbcs.mouse_name
